@@ -43,16 +43,14 @@ while True:
             num = int(i)
             if(num != 1 and num != 0):
                 error(f"Invalid Input Numbers - ({num}?)")
-                is_error = True
                 continue
             sub_matrix.append(num)
         if(len(sub_matrix) != w and is_error == False):
             error("Invalid Width!")
-            is_error=True
             continue
         matrix.append(sub_matrix)
     
-    if(error):continue
+    if(is_error):continue
     grid = Grid(matrix=matrix)
 
     sx, se = map(int,input("Start Position: ").split())
